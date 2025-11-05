@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+        <ol tabindex="-1"
+            class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+        </ol>
+    </div>
+    <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text"
+        aria-atomic="false"></section>
+    <div class="min-h-screen">
+        <nav class="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-2 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-shield h-8 w-8 text-primary">
+                            <path
+                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                            </path>
+                        </svg>
+                        <div class="flex flex-col"><span class="font-bold text-lg text-foreground">Shivam
+                                Pandey</span><span class="text-xs text-muted-foreground">Insurance Services</span></div>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6"><a href="#home"
+                            class="text-foreground hover:text-primary transition-colors">Home</a><a href="#about"
+                            class="text-foreground hover:text-primary transition-colors">About Us</a><a href="#services"
+                            class="text-foreground hover:text-primary transition-colors">Services</a><a href="#contact"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-9 rounded-md px-3">Contact
+                            Us</a></div><button id="nav-toggle-icon" class="md:hidden text-foreground"
+                        onclick="handleNavToggle()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-menu h-6 w-6">
+                            <line x1="4" x2="20" y1="12" y2="12"></line>
+                            <line x1="4" x2="20" y1="6" y2="6"></line>
+                            <line x1="4" x2="20" y1="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden py-4 space-y-3 animate-fade-in" id="nav-popup"><a href="#home"
+                        class="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors">Home</a><a
+                        href="#about"
+                        class="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors">About
+                        Us</a><a href="#services"
+                        class="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors">Services</a><a
+                        href="#contact"
+                        class="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors">Contact
+                        Us</a></div>
+            </div>
+        </nav>
+        <section id="home" class="relative min-h-screen flex items-center pt-16">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+            <div class="container mx-auto px-4 py-12 lg:py-20 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8 animate-fade-in">
+                        <div
+                            class="inline-block px-4 py-2 bg-secondary rounded-full text-sm font-medium text-secondary-foreground">
+                            Your Trusted Insurance Partner</div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">Secure Your
+                            Future with <span class="text-primary">Trusted Insurance</span></h1>
+                        <p class="text-lg text-muted-foreground max-w-xl">Comprehensive insurance solutions tailored to
+                            protect what matters most to you and your family. Expert guidance, transparent pricing, and
+                            unwavering support.</p>
+                        <div class="flex flex-col sm:flex-row gap-4"><button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-accent-foreground hover:bg-accent/90 shadow-md hover:shadow-lg hover:scale-105 h-12 rounded-md px-8 text-base"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5">
+                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                    <path d="M10 9H8"></path>
+                                    <path d="M16 13H8"></path>
+                                    <path d="M16 17H8"></path>
+                                </svg>Get a Quote</button><button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground h-12 rounded-md px-8 text-base"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-message-circle h-5 w-5">
+                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                                </svg>Chat on WhatsApp</button></div>
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+                            <div>
+                                <div class="text-3xl font-bold text-primary">10+</div>
+                                <div class="text-sm text-muted-foreground">Years Experience</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary">5000+</div>
+                                <div class="text-sm text-muted-foreground">Happy Clients</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-primary">100%</div>
+                                <div class="text-sm text-muted-foreground">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative animate-slide-in">
+                        <div class="rounded-2xl overflow-hidden shadow-strong"><img src="/assets/hero-insurance.jpg"
+                                alt="Family consulting with insurance advisor" class="w-full h-full object-cover"></div>
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-card rounded-xl shadow-medium p-6 max-w-xs border border-border hidden lg:block">
+                            <p class="text-sm font-medium text-card-foreground">"Professional service with a personal
+                                touch. Highly recommended!"</p>
+                            <p class="text-xs text-muted-foreground mt-2">- Satisfied Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="py-20 bg-muted/30">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">About <span
+                            class="text-primary">Shivam Pandey</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-muted-foreground">Your Trusted Insurance Advisor</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="space-y-6 animate-fade-in">
+                        <h3 class="text-2xl font-semibold text-foreground">Committed to Your Financial Security</h3>
+                        <p class="text-muted-foreground leading-relaxed">With over a decade of experience in the
+                            insurance industry, Mr. Shivam Pandey has been helping individuals and families secure their
+                            financial future through comprehensive insurance solutions.</p>
+                        <p class="text-muted-foreground leading-relaxed">Our mission is simple: to provide honest,
+                            transparent, and personalized insurance advice that truly protects what matters most to you.
+                            We believe in building long-term relationships based on trust, integrity, and exceptional
+                            service.</p>
+                        <p class="text-muted-foreground leading-relaxed">Whether you're looking for life insurance,
+                            health coverage, vehicle protection, or travel insurance, we work with leading insurance
+                            providers to find the perfect solution that fits your needs and budget.</p>
+                        <div class="flex items-center gap-4 pt-4">
+                            <div class="h-12 w-1 bg-primary"></div>
+                            <p class="text-foreground font-medium italic">"Your peace of mind is our priority. We're
+                                here to guide you every step of the way."</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div
+                            class="bg-card p-6 rounded-xl shadow-soft border border-border hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                            <div class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-shield h-6 w-6 text-primary">
+                                    <path
+                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                    </path>
+                                </svg></div>
+                            <h4 class="font-semibold text-card-foreground mb-2">Trusted Expertise</h4>
+                            <p class="text-sm text-muted-foreground">Over 10 years of experience in the insurance
+                                industry</p>
+                        </div>
+                        <div
+                            class="bg-card p-6 rounded-xl shadow-soft border border-border hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                            <div class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-award h-6 w-6 text-primary">
+                                    <path
+                                        d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                                    </path>
+                                    <circle cx="12" cy="8" r="6"></circle>
+                                </svg></div>
+                            <h4 class="font-semibold text-card-foreground mb-2">Licensed Professional</h4>
+                            <p class="text-sm text-muted-foreground">Certified insurance advisor with proven track
+                                record</p>
+                        </div>
+                        <div
+                            class="bg-card p-6 rounded-xl shadow-soft border border-border hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                            <div class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-users h-6 w-6 text-primary">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg></div>
+                            <h4 class="font-semibold text-card-foreground mb-2">Client-Focused</h4>
+                            <p class="text-sm text-muted-foreground">Personalized solutions tailored to your unique
+                                needs</p>
+                        </div>
+                        <div
+                            class="bg-card p-6 rounded-xl shadow-soft border border-border hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                            <div class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-trending-up h-6 w-6 text-primary">
+                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                    <polyline points="16 7 22 7 22 13"></polyline>
+                                </svg></div>
+                            <h4 class="font-semibold text-card-foreground mb-2">Transparent Service</h4>
+                            <p class="text-sm text-muted-foreground">Honest advice and clear communication at every step
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary rounded-2xl p-8 md:p-12 text-center shadow-strong">
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">Why Choose Us?</h3>
+                    <p class="text-primary-foreground/90 max-w-2xl mx-auto mb-8">We combine industry expertise with
+                        genuine care for our clients. Our approach is simple: understand your needs, provide honest
+                        recommendations, and support you throughout your journey.</p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-primary-foreground">
+                            <div class="text-3xl font-bold mb-2">100%</div>
+                            <div class="text-sm text-primary-foreground/80">Client Satisfaction</div>
+                        </div>
+                        <div class="text-primary-foreground">
+                            <div class="text-3xl font-bold mb-2">5000+</div>
+                            <div class="text-sm text-primary-foreground/80">Policies Sold</div>
+                        </div>
+                        <div class="text-primary-foreground">
+                            <div class="text-3xl font-bold mb-2">24/7</div>
+                            <div class="text-sm text-primary-foreground/80">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Our <span
+                            class="text-primary">Insurance Services</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-muted-foreground">Comprehensive insurance solutions to protect what matters
+                        most</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-card rounded-xl p-8 shadow-soft border border-border hover:shadow-strong transition-all duration-300 hover:-translate-y-2 group">
+                        <div
+                            class="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-heart h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Life Insurance</h3>
+                        <p class="text-muted-foreground mb-4 leading-relaxed">Protect your loved ones' financial future
+                            with comprehensive life insurance coverage tailored to your family's needs.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Term Life Plans
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Whole Life Coverage
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Investment-Linked Plans
+                            </li>
+                        </ul><button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground h-10 px-4 py-2 w-full">Contact
+                            Now</button>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-8 shadow-soft border border-border hover:shadow-strong transition-all duration-300 hover:-translate-y-2 group">
+                        <div
+                            class="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-activity h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                <path
+                                    d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Health Insurance</h3>
+                        <p class="text-muted-foreground mb-4 leading-relaxed">Comprehensive health coverage for you and
+                            your family with cashless hospitalization and extensive medical benefits.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Individual Plans
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Family Floater
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Critical Illness Cover
+                            </li>
+                        </ul><button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground h-10 px-4 py-2 w-full">Contact
+                            Now</button>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-8 shadow-soft border border-border hover:shadow-strong transition-all duration-300 hover:-translate-y-2 group">
+                        <div
+                            class="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-car h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                <path
+                                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2">
+                                </path>
+                                <circle cx="7" cy="17" r="2"></circle>
+                                <path d="M9 17h6"></path>
+                                <circle cx="17" cy="17" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Motor Insurance</h3>
+                        <p class="text-muted-foreground mb-4 leading-relaxed">Complete protection for your vehicle with
+                            comprehensive and third-party insurance coverage options.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Car Insurance
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Two-Wheeler Insurance
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Commercial Vehicle
+                            </li>
+                        </ul><button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground h-10 px-4 py-2 w-full">Contact
+                            Now</button>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-8 shadow-soft border border-border hover:shadow-strong transition-all duration-300 hover:-translate-y-2 group">
+                        <div
+                            class="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-shield h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Term Plans</h3>
+                        <p class="text-muted-foreground mb-4 leading-relaxed">Pure protection at affordable premiums.
+                            Secure your family's future with high coverage at low cost.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>High Coverage
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Affordable Premiums
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Tax Benefits
+                            </li>
+                        </ul><button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground h-10 px-4 py-2 w-full">Contact
+                            Now</button>
+                    </div>
+                    <div
+                        class="bg-card rounded-xl p-8 shadow-soft border border-border hover:shadow-strong transition-all duration-300 hover:-translate-y-2 group">
+                        <div
+                            class="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-plane h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Travel Insurance</h3>
+                        <p class="text-muted-foreground mb-4 leading-relaxed">Travel worry-free with comprehensive
+                            coverage for medical emergencies, trip cancellations, and lost baggage.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Medical Coverage
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Trip Cancellation
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <div class="h-1.5 w-1.5 bg-primary rounded-full mr-2"></div>Lost Baggage Protection
+                            </li>
+                        </ul><button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground h-10 px-4 py-2 w-full">Contact
+                            Now</button>
+                    </div>
+                </div>
+                <div class="mt-16 bg-secondary/50 rounded-2xl p-8 md:p-12 text-center">
+                    <h3 class="text-2xl font-bold text-foreground mb-4">Don't See What You're Looking For?</h3>
+                    <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">We offer many more insurance products and
+                        services. Contact us to discuss your specific needs, and we'll help you find the perfect
+                        coverage.</p><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-12 rounded-md px-8 text-base">Get
+                        Custom Quote</button>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="py-20 bg-muted/30">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Get in <span
+                            class="text-primary">Touch</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-muted-foreground">Ready to protect your future? Contact us today for a free
+                        consultation</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="bg-card rounded-xl p-8 shadow-soft border border-border">
+                            <h3 class="text-xl font-semibold text-card-foreground mb-6">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-phone h-6 w-6 text-primary">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-card-foreground mb-1">Phone</p><a
+                                            href="tel:+919876543210"
+                                            class="text-muted-foreground hover:text-primary transition-colors">+91 98765
+                                            43210</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-mail h-6 w-6 text-primary">
+                                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-card-foreground mb-1">Email</p><a
+                                            href="mailto:shivam.insurance@example.com"
+                                            class="text-muted-foreground hover:text-primary transition-colors">shivam.insurance@example.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-map-pin h-6 w-6 text-primary">
+                                            <path
+                                                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                            </path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-card-foreground mb-1">Address</p>
+                                        <p class="text-muted-foreground">123 Insurance Plaza, MG Road<br>Mumbai,
+                                            Maharashtra 400001<br>India</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-border"><button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-accent-foreground hover:bg-accent/90 shadow-md hover:shadow-lg hover:scale-105 h-10 px-4 py-2 w-full"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-message-circle h-5 w-5">
+                                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                                    </svg>Chat on WhatsApp</button></div>
+                        </div>
+                        <div class="bg-primary rounded-xl p-8 text-primary-foreground">
+                            <h4 class="text-lg font-semibold mb-4">Office Hours</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between"><span>Monday - Friday:</span><span>9:00 AM - 6:00
+                                        PM</span></div>
+                                <div class="flex justify-between"><span>Saturday:</span><span>10:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between"><span>Sunday:</span><span>Closed</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-card rounded-xl p-8 shadow-soft border border-border">
+                        <h3 class="text-xl font-semibold text-card-foreground mb-6">Send us a Message</h3>
+                        <form class="space-y-6">
+                            <div><label for="name" class="block text-sm font-medium text-card-foreground mb-2">Full Name
+                                    *</label><input type="text"
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                                    id="name" placeholder="Enter your name" required="" value=""></div>
+                            <div><label for="email" class="block text-sm font-medium text-card-foreground mb-2">Email
+                                    Address *</label><input type="email"
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                                    id="email" placeholder="your.email@example.com" required="" value=""></div>
+                            <div><label for="phone" class="block text-sm font-medium text-card-foreground mb-2">Phone
+                                    Number *</label><input type="tel"
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                                    id="phone" placeholder="+91 98765 43210" required="" value=""></div>
+                            <div><label for="message"
+                                    class="block text-sm font-medium text-card-foreground mb-2">Message
+                                    *</label><textarea
+                                    class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    id="message" placeholder="Tell us about your insurance needs..." rows="5"
+                                    required=""></textarea></div><button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-12 rounded-md px-8 text-base w-full"
+                                type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-foreground text-background">
+            <div class="container mx-auto px-4 py-12">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-shield h-8 w-8 text-accent">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                </path>
+                            </svg>
+                            <div class="flex flex-col"><span class="font-bold text-lg">Shivam Pandey</span><span
+                                    class="text-xs text-background/80">Insurance Services</span></div>
+                        </div>
+                        <p class="text-sm text-background/80 leading-relaxed">Your trusted partner in securing your
+                            future with comprehensive insurance solutions.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-sm text-background/80">
+                            <li><a href="#home" class="hover:text-accent transition-colors">Home</a></li>
+                            <li><a href="#about" class="hover:text-accent transition-colors">About Us</a></li>
+                            <li><a href="#services" class="hover:text-accent transition-colors">Services</a></li>
+                            <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">Our Services</h4>
+                        <ul class="space-y-2 text-sm text-background/80">
+                            <li>Life Insurance</li>
+                            <li>Health Insurance</li>
+                            <li>Motor Insurance</li>
+                            <li>Term Plans</li>
+                            <li>Travel Insurance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">Contact Us</h4>
+                        <ul class="space-y-3 text-sm text-background/80">
+                            <li class="flex items-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-map-pin h-4 w-4 mt-1 flex-shrink-0">
+                                    <path
+                                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg><span>123 Insurance Plaza, MG Road, Mumbai, Maharashtra 400001</span></li>
+                            <li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-phone h-4 w-4 flex-shrink-0">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg><a href="tel:+919876543210" class="hover:text-accent transition-colors">+91 98765
+                                    43210</a></li>
+                            <li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-mail h-4 w-4 flex-shrink-0">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg><a href="mailto:shivam.insurance@example.com"
+                                    class="hover:text-accent transition-colors">shivam.insurance@example.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-background/20 pt-8 mt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="text-sm text-background/80">© 2025 Shivam Pandey Insurance Services. All rights
+                            reserved.</p>
+                        <div class="flex gap-4"><a href="#"
+                                class="h-10 w-10 bg-background/10 hover:bg-accent rounded-full flex items-center justify-center transition-colors"
+                                aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-facebook h-5 w-5">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg></a><a href="#"
+                                class="h-10 w-10 bg-background/10 hover:bg-accent rounded-full flex items-center justify-center transition-colors"
+                                aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-twitter h-5 w-5">
+                                    <path
+                                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                                    </path>
+                                </svg></a><a href="#"
+                                class="h-10 w-10 bg-background/10 hover:bg-accent rounded-full flex items-center justify-center transition-colors"
+                                aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-linkedin h-5 w-5">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg></a><a href="#"
+                                class="h-10 w-10 bg-background/10 hover:bg-accent rounded-full flex items-center justify-center transition-colors"
+                                aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-instagram h-5 w-5">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+
+        let isNavOpen = false;
+
+        function handleNavToggle() {
+            let navPopup = document.querySelector("#nav-popup");
+            let navToggleIcon = document.querySelector("#nav-toggle-icon");
+            let openIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>`;
+            let closeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-6 w-6"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>`;
+
+            if (isNavOpen) {
+                navPopup.style.display = "none";
+                navToggleIcon.innerHTML = openIcon;
+            } else {
+                navPopup.style.display = "block";
+                navToggleIcon.innerHTML = closeIcon;
+            }
+            isNavOpen = !isNavOpen;
+        };
+    </script>
+</body>
+
+</html>
